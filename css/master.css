@@ -1,0 +1,546 @@
+:root {
+    --main-color: rgba(0, 0, 0, 0.49);
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+}
+body {
+    font-family: "Cairo", sans-serif;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+* {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Start Header */
+.header {
+    background-color: #fff;
+    position: relative;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.header .logo {
+    height: 72px;
+    color: var(--main-color);
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 767px) {
+    .header .logo {
+        width: 100%;
+        height: 50px;
+    }
+}
+.header .main-nav {
+    display: flex;
+}
+@media (max-width: 767px) {
+    .header .main-nav {
+        margin: auto;
+    }
+}
+.header .main-nav>li>a {
+    padding: 0 30px;
+    color: #000;
+    position: relative;
+    display: flex;
+    height: 72px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+@media (max-width: 767px) {
+    .header .main-nav>li>a {
+        padding: 10px;
+        font-size: 14px;
+        height: 40px;
+    }
+}
+.header .main-nav>li>a:hover {
+    color: var(--main-color);
+    background-color: #fafafa;
+}
+.header .main-nav>li>a::before {
+    left: -100%;
+    top: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    transition: 0.3s;
+}
+.header .main-nav>li>a:hover::before {
+    left: 0;
+}
+/* End Header */
+/* Start About */
+.about {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    height: calc(100vh - 72px);
+
+}
+.about .container {
+    display: flex;
+    justify-content: space-between;
+}
+.about .text h3 {
+    font-size: 30px;
+}
+.about .text span {
+    display: block;
+    font-size: 20px;
+    color: gray;
+}
+.about .text h2 {
+    font-size: 46px;
+    margin: 10px 0;
+}
+.about .text p {
+    color: gray;
+    font-size: 20px;
+}
+.about .text a {
+    display: block;
+    background-color: #000;
+    color: white;
+    padding: 13px 15px;
+    border-radius: 6px;
+    font-size: 18px;
+    width: fit-content;
+    margin: 35px 0 10px;
+    transition: 0.3s;
+}
+.about .text a:hover {
+    color: black;
+    background-color: #eee;
+}
+.about .icon {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 25px;
+    width: fit-content;
+    font-size: 30px;
+    transition: color 0.3s;
+}
+.about .icon a i {
+    display: block;
+    color: #000;
+}
+.about .icon .f-book:hover i {
+    color: #1877f2;;
+}
+.about .icon .insta:hover i {
+    color: #f56040;
+}
+.about .icon .git-hub:hover i {
+    color: #6e5494;
+}
+.about .icon .twitter:hover i {
+    color: #1da1f2;
+}
+.about .icon .linked:hover i {
+    color: #004182;
+}
+@media (max-width: 767px) {
+    .about {
+        padding-top: 225px;
+        padding-bottom: 225px;
+    }
+    .about .icon {
+        padding-left: 10px;
+        border-left: 2px solid black;
+    }
+    .about .text h3 {
+        font-size: 25px;
+    }
+    .about .text span {
+        font-size: 18px;
+    }
+    .about .text h2 {
+        font-size: 40px;
+        margin: 10px 0;
+    }
+    .about .text p {
+        font-size: 18px;
+    }
+}
+
+/* End About */
+/* Start Skills */
+.skills {
+    background-color: black;
+    height: 650px;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.skills::after {
+    content: "";
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    top: -60px;
+    z-index: -1;
+    position: absolute;
+    transform: skewY(-5deg);
+    transform-origin: top center;
+}
+.skills::before {
+    content: "";
+    background-color: white;
+    height: 150px;
+    width: 100%;
+    bottom: -75px;
+    z-index: 1;
+    position: absolute;
+    transform: skewY(-5deg);
+    transform-origin: bottom center;
+}
+.skills .container {
+    text-align: center;
+}
+.skills h2 {
+    color: white;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+.skills .lines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.skills .lines .prog {
+    position: relative;
+    background-color: #eee;
+    width: 100%;
+    display: flex;
+    left: 0px;
+    height: 56px;
+    margin: 0 0 50px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.skills .lines .prog i {
+    display: block;
+    position: absolute;
+    right: 25px;
+    font-size: 50px;
+    margin: 3px -1px 3px 0;
+}
+.skills .lines .prog span {
+    display: block;
+}
+/* End Skills */
+/* Start Sources */
+.sources {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    text-align: center;
+}
+.sources h2 {
+    font-size: 50px;
+    margin: 0 0 50px;
+}
+.sources a {
+    display: block;
+    color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+.sources .codezilla .courses a {
+    margin-bottom: 65px;
+}
+.sources .courses a:hover {
+    /* box-shadow: 0 0 5px #000; */
+    font-size: 22px;
+    padding: 30px;
+}
+
+.sources .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    justify-content: space-between;
+    gap: 25px;
+}
+.sources img {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 10px #000;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+.sources h3 {
+    color: #000;
+    font-size: 40px;
+    padding: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+}
+.sources h4 {
+    color: white;
+    margin: 40px 0 25px;
+    font-size: 25px;
+}
+.sources .codezilla h4 {
+    margin: 40px 0;
+}
+.sources .elzero {
+    background-color: #0075ff;
+    padding: 100px 10px;
+    height: 1100px;
+}
+.sources .codezilla {
+    background-color: #612bf5;
+    padding: 100px 10px;
+    height: 1100px;
+}
+.sources .elzero .html {
+    color: red;
+}
+.sources .elzero .css {
+    color: #072F73;
+}
+.sources .elzero .js {
+    color: #FAC311;
+}
+.sources .elzero .command {
+    color: #1D1D1D;
+}
+.sources .elzero .github {
+    color: #DDDDDD;
+}
+.sources .codezilla .portfolio {
+    color: #4E9EFF;
+}
+.sources .codezilla .youtube {
+    color: #FB100A;
+}
+.sources .codezilla .twitter {
+    color: #2E9CED;
+}
+@media (max-width: 767px) {
+    .sources .container {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 10px;
+    }
+}
+/* End Sources */
+/* Start Contact  */
+.contact {
+    padding: 30px 100px;
+    background-color: #000;
+    position: relative;
+    height: 150px;
+}
+.contact h2 {
+    color: white;
+    opacity: .2;
+    font-size: 80px;
+    position: absolute;
+    top: -43px;
+    left: 45%;
+    width: 200px;
+    transform: translateX(-50%);
+}
+.contact .cont {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.contact .cont a {
+    display: block;
+    color: white;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+}
+/* End Contact  */
+/* Start Footer  */
+.footer {
+    height: 60px;
+    width: 100%;
+    padding: 0 50px;
+    background-color: rgb(8, 8, 8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -2px;
+}
+.footer h3 i {
+    color: red;
+}
+.footer h3 span {
+    color: goldenrod;
+}
+.footer .footer-icons {
+    transition: 0.3s;
+}
+.footer .footer-icons a {
+    color: white;
+    margin: 10px;
+    font-size: 25px;
+}
+.footer .footer-icons .f-book:hover i {
+    color: #1877f2;;
+}
+.footer .footer-icons .insta:hover i {
+    color: #f56040;
+}
+.footer .footer-icons .git-hub:hover i {
+    color: #6e5494;
+}
+.footer .footer-icons .twitter:hover i {
+    color: #1da1f2;
+}
+.footer .footer-icons .linked:hover i {
+    color: #004182;
+}
+@media (max-width: 767px) {
+    .footer {
+        justify-content: center;
+        flex-direction: column;
+    }
+    .footer h3 {
+        margin-bottom: 10px;
+    }
+}
+/* End Footer  */
+/* Start Work Page */
+.work {
+    background-color: #000;
+}
+.work h1 {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+}
+.work .container-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.work .container-img a {
+    position: relative;
+}
+.work .container-img a::after {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: #00000092;
+    bottom: -60px;
+    left: 0;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.work .container-img .box-5 a::after {
+    content: "My Portfolio";
+}
+.work .container-img .box-4 a::after {
+    content: "Elzero Design";
+}
+.work .container-img .box-3 a::after {
+    content: "Elzero Design";
+}
+.work .container-img .box-2 a::after {
+    content: "Kasper Design";
+}
+.work .container-img .box-1 a::after {
+    content: "Leon Design";
+}
+.work .container-img .box-0 a::after {
+    content: "Login Form";
+}
+.work .container-img img {
+    max-width: 100%;
+    transition: 0.3s;
+    position: relative;
+}
+.work .container-img a:hover img {
+    transform: rotate(-3deg) scale(1.1);
+}
+.work .container-img a:hover::after {
+    bottom: 0px;
+}
+.box-0,
+.box-1,
+.box-2,
+.box-3,
+.box-4,
+.box-5 {
+    overflow: hidden;
+}
+.box-6 {
+    background-color: rgb(25, 25, 25);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    padding: 30px;
+}
+/* End Work Page */
